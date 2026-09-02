@@ -1,0 +1,662 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: Arial, sans-serif;
+
+  background: #ffffff;
+
+  color: #406AAF;
+}
+
+
+/* =========================================
+   MAIN APP CONTAINER
+========================================= */
+
+.container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 40px 20px;
+
+  background: #fffffe;
+}
+
+
+/* =========================================
+   ASSISTANT CARD
+========================================= */
+
+.assistant-card {
+  width: 100%;
+  max-width: 850px;
+
+  padding: 45px;
+
+  background: #ebdec5;
+
+  border: 3px solid #f5dd85;
+  border-radius: 28px;
+
+  box-shadow: 0 12px 30px rgba(64, 106, 175, 0.22);
+
+  text-align: center;
+}
+
+
+/* =========================================
+   MAIN TITLE
+========================================= */
+
+.assistant-card h1 {
+  margin: 0;
+
+  color: #406AAF;
+
+  font-size: clamp(42px, 7vw, 76px);
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  line-height: 1.1;
+}
+
+.assistant-card h1 span {
+  color: #427AB5;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SUBTITLE
+========================================= */
+
+.subtitle {
+  margin: 18px 0 10px;
+
+  color: #406AAF;
+
+  font-size: clamp(20px, 3vw, 27px);
+
+  font-weight: 500;
+}
+
+
+/* =========================================
+   LANGUAGE SELECTOR
+========================================= */
+
+.language-selector {
+  margin-top: 20px;
+}
+
+.language-selector p {
+  margin-bottom: 16px;
+
+  color: #406AAF;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+/* LANGUAGE BUTTONS */
+
+.language-selector button {
+  min-width: 130px;
+
+  margin: 6px;
+
+  padding: 13px 22px;
+
+  border: 2px solid #427AB5;
+  border-radius: 14px;
+
+  background: #FFE8BE;
+
+  color: #406AAF;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  box-shadow: 0 4px 0 #F7DD7D;
+}
+
+
+/* LANGUAGE BUTTON HOVER */
+
+.language-selector button:hover {
+  transform: translateY(-3px);
+
+  background: #F7DD7D;
+
+  box-shadow: 0 7px 0 #427AB5;
+}
+
+
+/* ACTIVE LANGUAGE */
+
+.language-selector button.active-language {
+  background: #427AB5;
+
+  color: #FFE8BE;
+
+  border-color: #406AAF;
+
+  box-shadow: 0 4px 0 #406AAF;
+}
+
+.language-selector button.active-language:hover {
+  background: #406AAF;
+}
+
+
+/* =========================================
+   MICROPHONE BUTTON
+========================================= */
+
+.mic-button {
+  width: 85px;
+  height: 85px;
+
+  margin-top: 25px;
+
+  border: 5px solid #F7DD7D;
+  border-radius: 50%;
+
+  background: #427AB5;
+
+  color: #FFE8BE;
+
+  font-size: 36px;
+
+  cursor: pointer;
+
+  box-shadow: 0 7px 0 #406AAF;
+
+  transition: all 0.25s ease;
+}
+
+.mic-button:hover {
+  background: #406AAF;
+
+  transform: translateY(-4px) scale(1.04);
+
+  box-shadow: 0 11px 0 #427AB5;
+}
+
+.mic-button:active {
+  transform: translateY(4px);
+
+  box-shadow: 0 3px 0 #406AAF;
+}
+
+.mic-button:disabled {
+  cursor: not-allowed;
+
+  background: #406AAF;
+
+  transform: none;
+}
+
+
+/* =========================================
+   MICROPHONE TEXT
+========================================= */
+
+.mic-text {
+  margin-top: 15px;
+
+  color: #406AAF;
+
+  font-size: 21px;
+  font-weight: 500;
+}
+
+
+/* =========================================
+   TEST ASSISTANT SECTION
+========================================= */
+
+.test-section {
+  margin-top: 38px;
+  padding-top: 25px;
+
+  border-top: 2px solid #F7DD7D;
+}
+
+.test-section h3 {
+  margin-bottom: 22px;
+
+  color: #406AAF;
+
+  font-size: 28px;
+  font-weight: 800;
+}
+
+
+/* INPUT */
+
+.test-section input {
+  width: min(70%, 500px);
+
+  padding: 15px 18px;
+
+  border: 2px solid #427AB5;
+  border-radius: 14px;
+
+  background: #FFE8BE;
+
+  color: #406AAF;
+
+  font-size: 18px;
+
+  outline: none;
+
+  transition: 0.25s ease;
+}
+
+.test-section input:focus {
+  border-color: #406AAF;
+
+  box-shadow: 0 0 0 4px rgba(66, 122, 181, 0.18);
+}
+
+.test-section input::placeholder {
+  color: #406AAF;
+
+  opacity: 0.65;
+}
+
+
+/* SEND BUTTON */
+
+.test-section button {
+  margin-left: 10px;
+
+  padding: 15px 25px;
+
+  border: 2px solid #406AAF;
+  border-radius: 14px;
+
+  background: #427AB5;
+
+  color: #FFE8BE;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow: 0 4px 0 #406AAF;
+
+  transition: 0.2s ease;
+}
+
+.test-section button:hover {
+  background: #406AAF;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 0 #427AB5;
+}
+
+.test-section button:active {
+  transform: translateY(2px);
+
+  box-shadow: 0 2px 0 #406AAF;
+}
+
+
+/* =========================================
+   GAME SELECTOR
+========================================= */
+
+.games-selector {
+  margin-top: 25px;
+  padding: 25px;
+
+  background: #F7DD7D;
+
+  border: 2px solid #427AB5;
+  border-radius: 20px;
+}
+
+.games-selector h3 {
+  margin-top: 0;
+
+  color: #406AAF;
+
+  font-size: 24px;
+}
+
+.games-selector button {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 14px;
+
+  border: 2px solid #406AAF;
+  border-radius: 12px;
+
+  background: #FFE8BE;
+
+  color: #406AAF;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.games-selector button:hover {
+  background: #427AB5;
+
+  color: #FFE8BE;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   REMINDER SECTION
+========================================= */
+
+.reminder-section {
+  margin-top: 30px;
+  padding: 25px;
+
+  background: #FFE8BE;
+
+  border: 3px solid #F7DD7D;
+  border-radius: 22px;
+
+  box-shadow: 0 8px 20px rgba(64, 106, 175, 0.15);
+}
+
+.reminder-section h3 {
+  margin: 0 0 20px;
+
+  color: #406AAF;
+
+  font-size: 26px;
+  font-weight: 800;
+}
+
+
+/* REMINDER INPUTS */
+
+.reminder-section input {
+  width: 100%;
+
+  margin-bottom: 14px;
+  padding: 14px 16px;
+
+  border: 2px solid #427AB5;
+  border-radius: 12px;
+
+  background: #FFE8BE;
+
+  color: #406AAF;
+
+  font-size: 16px;
+
+  outline: none;
+}
+
+.reminder-section input:focus {
+  border-color: #406AAF;
+
+  box-shadow: 0 0 0 4px rgba(66, 122, 181, 0.18);
+}
+
+
+/* ADD REMINDER BUTTON */
+
+.add-reminder-button {
+  width: 100%;
+
+  min-height: 54px;
+
+  padding: 14px;
+
+  border: 2px solid #406AAF;
+  border-radius: 14px;
+
+  background: #427AB5;
+
+  color: #FFE8BE;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 0 #406AAF;
+
+  transition: 0.2s ease;
+}
+
+.add-reminder-button:hover {
+  background: #406AAF;
+
+  transform: translateY(-2px);
+}
+
+
+/* REMINDER LIST */
+
+.reminder-list {
+  margin-top: 22px;
+}
+
+.no-reminders {
+  color: #406AAF;
+
+  font-weight: 600;
+}
+
+
+/* REMINDER CARD */
+
+.reminder-item {
+  margin-top: 15px;
+  padding: 18px;
+
+  background: #F7DD7D;
+
+  border: 2px solid #427AB5;
+  border-radius: 16px;
+
+  text-align: left;
+
+  box-shadow: 0 5px 12px rgba(64, 106, 175, 0.15);
+}
+
+.reminder-message {
+  margin: 0 0 10px;
+
+  color: #406AAF;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.reminder-time {
+  display: block;
+
+  color: #406AAF;
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+
+/* REMINDER BUTTONS */
+
+.reminder-buttons {
+  display: flex;
+
+  gap: 12px;
+
+  margin-top: 16px;
+}
+
+.reminder-buttons button {
+  flex: 1;
+
+  min-height: 48px;
+
+  border: 2px solid #406AAF;
+  border-radius: 12px;
+
+  color: #FFE8BE;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+
+/* READ */
+
+.read-button {
+  background: #427AB5;
+}
+
+.read-button:hover {
+  background: #406AAF;
+
+  transform: translateY(-2px);
+}
+
+
+/* DELETE */
+
+.delete-button {
+  background: #406AAF;
+}
+
+.delete-button:hover {
+  background: #427AB5;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESULT BOXES
+========================================= */
+
+.result-box,
+.response-box {
+  margin-top: 22px;
+  padding: 20px;
+
+  border-radius: 16px;
+
+  text-align: left;
+}
+
+.result-box {
+  background: #F7DD7D;
+
+  border: 2px solid #427AB5;
+}
+
+.response-box {
+  background: #FFE8BE;
+
+  border: 2px solid #406AAF;
+}
+
+.result-box h3,
+.response-box h3 {
+  margin-top: 0;
+
+  color: #406AAF;
+
+  font-size: 20px;
+}
+
+.result-box p,
+.response-box p {
+  margin-bottom: 0;
+
+  color: #406AAF;
+
+  font-size: 17px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 650px) {
+  .container {
+    padding: 20px 12px;
+  }
+
+  .assistant-card {
+    padding: 25px 18px;
+
+    border-radius: 22px;
+  }
+
+  .language-selector button {
+    width: 100%;
+
+    margin: 6px 0;
+  }
+
+  .test-section input {
+    width: 100%;
+  }
+
+  .test-section button {
+    width: 100%;
+
+    margin: 12px 0 0;
+  }
+
+  .reminder-buttons {
+    flex-direction: column;
+  }
+
+  .reminder-buttons button {
+    width: 100%;
+  }
+
+  .mic-button {
+    width: 75px;
+    height: 75px;
+
+    font-size: 30px;
+  }
+}
